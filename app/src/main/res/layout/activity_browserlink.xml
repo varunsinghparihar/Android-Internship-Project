@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".browserActivity.browserLink">
+
+    <TextView
+        android:id="@+id/tvURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Enter URL : "
+        android:textColor="#D9000000"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <Button
+        android:id="@+id/openWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Open"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/etLink"
+        app:layout_constraintStart_toEndOf="@+id/tvURL"
+        app:layout_constraintTop_toBottomOf="@+id/tvURL" />
+
+    <EditText
+        android:id="@+id/etLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ems="5"
+        android:hint="Paste Link"
+        android:inputType="text"
+        android:textSize="24sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/tvURL"
+        app:layout_constraintStart_toEndOf="@+id/tvURL"
+        app:layout_constraintTop_toTopOf="@+id/tvURL" />
+</androidx.constraintlayout.widget.ConstraintLayout>

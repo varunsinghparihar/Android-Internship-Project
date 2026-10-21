@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Internship_Project</string>
+
+    <string name="Item1DescriptionText">
+        This is the description of the item 1, shown if the user tap on list item 1.
+    </string>
+
+    <string name="Item2DescriptionText">
+        This is the description of the item 2, shown if the user tap on list item 2.
+    </string>
+
+    <string name="Item3DescriptionText">
+        This is the description of the item 3, shown if the user tap on list item 3.
+    </string>
+
+    <string name="Item4DescriptionText">
+        This is the description of the item 4, shown if the user tap on list item 4.
+    </string>
+
+
+    <string name="Item5DescriptionText">
+        This is the description of the item 5, shown if the user tap on list item 5.
+    </string>
+
+    <string name="Item6DescriptionText">
+        This is the description of the item 6, shown if the user tap on list item 6.
+    </string>
+
+    <string name="Item7DescriptionText">
+        This is the description of the item 7, shown if the user tap on list item 7.
+    </string>
+
+    <string name="Item8DescriptionText">
+        This is the description of the item 8, shown if the user tap on list item 8.
+    </string>
+
+    <string name="Item9DescriptionText">
+        This is the description of the item 9, shown if the user tap on list item 9.
+    </string>
+
+    <string name="Item10DescriptionText">
+        This is the description of the item 10, shown if the user tap on list item 10.
+    </string>
+
+    <string name="Item11DescriptionText">
+        This is the description of the item 11, shown if the user tap on list item 11.
+    </string>
+
+    <string name="Item12DescriptionText">
+        This is the description of the item 12, shown if the user tap on list item12.
+    </string>
+
+</resources>
