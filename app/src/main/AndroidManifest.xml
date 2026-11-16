@@ -23,21 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".browserActivity.browserLink"
-            android:exported="false"
-            android:theme="@style/Theme.Material3.DynamicColors.Light"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".recyclerViewActivity.RecyclerViewList"
-            android:exported="false"
-            android:theme="@style/Theme.Material3Expressive.DynamicColors.Light"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".recyclerViewActivity.DetailActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Material3Expressive.DayNight.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
