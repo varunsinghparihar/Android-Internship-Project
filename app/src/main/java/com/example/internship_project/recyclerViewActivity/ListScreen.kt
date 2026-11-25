@@ -23,6 +23,7 @@ import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -32,6 +33,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.internship_project.R
+import com.example.internship_project.recyclerViewActivity.API.Post
+import com.example.internship_project.recyclerViewActivity.API.PostUiState
 
 
 @Preview(showBackground = true)
@@ -79,7 +82,9 @@ fun ListScreen(
     onBack: () -> Unit,
     uiState: PostUiState,
     onRetry: () -> Unit,
-    onItemClick: (Int) -> Unit
+    onItemClick: (Int) -> Unit,
+    isRefreshing: Boolean =false,
+    onRefresh:()-> Unit = {}
 ) {
     Scaffold(
         topBar = {
@@ -120,28 +125,35 @@ fun ListScreen(
             }
 
             is PostUiState.Success -> {
-                LazyColumn(modifier = Modifier.padding(padding)) {
-                    items(uiState.posts) { post ->
-                        ListItem(
-                            headlineContent = {
-                                Text(
-                                    post.title,
-                                    fontSize = 20.sp,
-                                    maxLines = 1,
-                                    overflow = TextOverflow.Ellipsis
-                                )
-                            },
-                            colors = ListItemDefaults.colors(
-                                containerColor = colorResource(id = R.color.aqua1)
-                            ),
-                            modifier = Modifier
-                                .clickable { onItemClick(post.id) }
-                                .height(60.dp)
-                        )
-                        Spacer(Modifier.height(4.dp))
+                PullToRefreshBox(
+                    isRefreshing = isRefreshing,
+                    onRefresh = onRefresh,
+                    modifier = Modifier.padding(padding).fillMaxSize()
+                ) {
+                    LazyColumn(modifier = Modifier.fillMaxSize()) {
+                        items(uiState.posts) { post ->
+                            ListItem(
+                                headlineContent = {
+                                    Text(
+                                        post.title,
+                                        fontSize = 20.sp,
+                                        maxLines = 1,
+                                        overflow = TextOverflow.Ellipsis
+                                    )
+                                },
+                                colors = ListItemDefaults.colors(
+                                    containerColor = colorResource(id = R.color.aqua1)
+                                ),
+                                modifier = Modifier
+                                    .clickable { onItemClick(post.id) }
+                                    .height(60.dp)
+                            )
+                            Spacer(Modifier.height(4.dp))
+                        }
                     }
                 }
             }
         }
     }
 }
+

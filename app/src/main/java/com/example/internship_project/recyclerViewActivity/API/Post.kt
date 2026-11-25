@@ -1,4 +1,4 @@
-package com.example.internship_project.recyclerViewActivity
+package com.example.internship_project.recyclerViewActivity.API
 
 data class Post(
     val userId: Int,

@@ -13,8 +13,8 @@ import androidx.navigation.navArgument
 import com.example.internship_project.browserActivity.BrowserScreen
 import com.example.internship_project.recyclerViewActivity.DetailScreen
 import com.example.internship_project.recyclerViewActivity.ListScreen
-import com.example.internship_project.recyclerViewActivity.PostUiState
-import com.example.internship_project.recyclerViewActivity.PostViewModel
+import com.example.internship_project.recyclerViewActivity.API.PostUiState
+import com.example.internship_project.recyclerViewActivity.API.PostViewModel
 import com.example.internship_project.ui.theme.Internship_ProjectTheme
 
 class MainActivity : ComponentActivity() {
@@ -41,7 +41,9 @@ class MainActivity : ComponentActivity() {
                             onBack = { navController.popBackStack() },
                             uiState = postViewModel.uiState,
                             onRetry = { postViewModel.loadPosts() },
-                            onItemClick = { id -> navController.navigate("detail/$id") }
+                            onItemClick = { id -> navController.navigate("detail/$id") },
+                            isRefreshing = postViewModel.isRefreshing,
+                            onRefresh = { postViewModel.loadPosts() }
                         )
                     }
                     composable(

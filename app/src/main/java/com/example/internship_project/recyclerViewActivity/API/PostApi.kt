@@ -1,4 +1,4 @@
-package com.example.internship_project.recyclerViewActivity
+package com.example.internship_project.recyclerViewActivity.API
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -12,7 +12,6 @@ interface PostApi {
 }
 
 object RetrofitInstance {
-
     private val logging = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
     }
